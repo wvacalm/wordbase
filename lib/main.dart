@@ -1,10 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:wordbase/classes/app_colors.dart';
 import 'package:wordbase/pages/home_page.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter/services.dart' show rootBundle;
-
-// import 'package:path_provider/path_provider.dart' as path_provider;
 
 void main() async {
   await Hive.initFlutter();
@@ -21,16 +20,15 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'WordBase',
       theme: ThemeData(
         colorScheme: ThemeData().colorScheme.copyWith(
-              primary: const Color.fromARGB(246, 131, 124, 122),
+              primary: AppColor.lightGrey,
             ),
-        scaffoldBackgroundColor: const Color.fromARGB(245, 250, 226, 218),
+        scaffoldBackgroundColor: AppColor.background,
       ),
       home: HomePage(),
     );
